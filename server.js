@@ -58,6 +58,11 @@ app.post("/update-location", (req, res) => {
   res.json({ status: 200 });
 });
 
+app.post("/", (req, res) => {
+  // trigger a new post event via pusher
+  res.json({ status: 200 }).send('Hello');
+});
+
 app.listen(process.env.PORT, () => {
   console.log("server is running");
 });
