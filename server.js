@@ -4,9 +4,12 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const Pusher = require("pusher");
 require('dotenv').config()
+var cors = require('cors')
 
 // create a express application
 const app = express();
+
+app.use(cors({ origin: "*" }))
 
 // initialize pusher
 const pusher = new Pusher({
